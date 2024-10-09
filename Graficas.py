@@ -3,8 +3,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 #lectura de datos
-df_before = pd.read_csv('Data/crimen_nac.csv', encoding='ISO-8859-1')
-df_after = pd.read_csv('Guardados/clean_crime_rate.csv', encoding='ISO-8859-1')
+df_before = pd.read_csv('Data/crimen_nac.csv', encoding='latin1')
+df_after = pd.read_csv('Guardados/clean_crime_rate.csv')
 
 st.title("Análisis Antes y Después de la Limpieza")
 
