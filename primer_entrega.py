@@ -21,7 +21,7 @@ data_df2 = load_data2()
 st.title("Mexico Crime Rates")
 st.divider()
 st.write("El data frame con el que empezamos a trabajar es una concatenacion de dos bases de datos")
-st.write()
+
 
 
 

@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from streamlit_option_menu import option_menu
 import pydeck as pdk
 import time
 
@@ -16,6 +17,10 @@ def load_data():
 data_df = load_data()
 
 st.title("Mexico Crime Rates Maps")
+selected= option_menu(menu_title=None, options=["Mapas", "Gráficas", "Modelo", "Acerca de"],icons=["bar-chart-fill","bezier","geo","info"], orientation="horizontal")
+if selected == "Mapas":
+    st.switch_page("pages/mapas.py")
+
 estados = data_df["Entidad"].unique()
     
     # Seleccionar estados para visualizar en el mapa
