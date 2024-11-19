@@ -23,10 +23,11 @@ with col1:
     if st.button("Mapas"):
         st.switch_page("pages/mapas.py")   
 with col2:
-    if st.button("Modelos"):
+    if st.button("KMeans"):
         st.switch_page("pages/modelos.py")
 with col3:  
-    st.button("placeholder")
+    if st.button("Regresion Lineal"):
+        st.switch_page("pages/modelo1.py")
 st.image("logo1.png")
 
 
