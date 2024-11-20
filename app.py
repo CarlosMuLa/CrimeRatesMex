@@ -24,10 +24,10 @@ with col1:
         st.switch_page("pages/mapas.py")   
 with col2:
     if st.button("KMeans"):
-        st.switch_page("pages/modelos.py")
+        st.switch_page("pages/K-Means.py")
 with col3:  
     if st.button("Regresion Lineal"):
-        st.switch_page("pages/modelo1.py")
+        st.switch_page("pages/Regresion Lineal.py")
 st.image("logo1.png")
 
 
