@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import silhouette_score, davies_bouldin_score
+from utils import load_data, total_data
 
 # Cargar el DataFrame
-crimes_df = pd.read_csv("./Guardados/clean_crime_rate.csv")
+crimes_df = load_data()
 
 ######## JUSTIFICACIÓN DE USO DE MODELO KMEANS ########
 texto_modelo_kmeans = """
