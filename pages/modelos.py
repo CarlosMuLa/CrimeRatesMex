@@ -105,8 +105,13 @@ st.dataframe(crimes_df_scaled_filtered)
 
 ######## Determinación del Número de Clústeres con el Método del Codo ########
 st.markdown("## Determinación de Número de Clústers")
-st.write("""Para este caso, usamos el método del codo para determinar el número de clústers en el que segmentaremos
-         la información. Con base en la siguiente gráfica, determinamos que en el valor 5, la gráfica se empieza a suavizar.""")
+num_clusters = st.sidebar.slider("Selecciona el número de clústeres", min_value=2, max_value=10, value=5, step=1)
+
+st.markdown("## Determinación de Número de Clústers")
+st.write(f"""
+Para este caso, usamos el método del codo para determinar el número de clústeres en el que segmentaremos
+la información. Con base en la siguiente gráfica, determinamos que en el valor {num_clusters}, la gráfica se empieza a suavizar.
+""")
 
 X = np.array(crimes_df_scaled_filtered[['Tipo de delito_codificado', 'Subtipo de delito_codificado', 'Sexo_codificado', 
                         'Rango de edad_codificado', 'Bien jurídico afectado_codificado', 'Cantidad']])
@@ -126,8 +131,6 @@ st.pyplot(plt)
 
 ######## ENTRENAMIENTO DE MODELO ########
 st.sidebar.title("Configuración de KMeans")
-num_clusters = st.sidebar.slider("Selecciona el número de clústeres", min_value=2, max_value=10, value=5, step=1)
-
 colores = ['purple', 'green', 'blue', 'pink', 'red', 'purple', 'orange', 'cyan', 'black', 'gray']
 
 # Entrenamiento del modelo KMeans
