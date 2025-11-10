@@ -27,5 +27,5 @@ jobs:
             -Dsonar.projectKey=python-advanced-demo \
             -Dsonar.sources=src \
             -Dsonar.tests=tests \
-            -Dsonar.host.url=http://your-sonarqube-server:9000 \
+            -Dsonar.host.url=http://localhost:9000 \
             -Dsonar.login=$SONAR_TOKEN
