@@ -1,0 +1,30 @@
+ame: SonarQube Analysis
+on:
+push:
+branches:
+- main
+jobs:
+sonar:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+- name: Set up Python
+uses: actions/setup-python@v5
+with:
+python-version: '3.10'
+- name: Install SonarScanner
+run: |
+sudo apt-get update
+sudo apt-get install -y unzip curl -sSLo
+sonar.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-
+6.1.0.4477-linux.zipLinks to an external site.
+unzip sonar.zip -d $HOME
+echo "$HOME/sonar-scanner-6.1.0.4477-linux/bin" >> $GITHUB_PATH
+- name: Run Sonar Scanner
+env:
+SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+run: sonar-scanner \
+-Dsonar.projectKey=python-advanced-demo \
+-Dsonar.sources=src \ -Dsonar.tests=tests \
+-Dsonar.host.url=http://your-sonarqube-server:9000 \
+-Dsonar.login=$SONAR_TOKEN
