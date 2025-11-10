@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y unzip curl
           curl -sSLo sonar.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-7.3.0.5189-linux-x64.zip
           unzip sonar.zip -d $HOME
-          echo "$HOME/sonar-scanner-6.1.0.4477-linux/bin" >> $GITHUB_PATH
+          echo "$HOME/sonar-scanner-cli-7.3.0.5189-linux-x64/bin" >> $GITHUB_PATH
       - name: Run Sonar Scanner
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
